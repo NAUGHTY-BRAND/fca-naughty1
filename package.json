@@ -1,7 +1,7 @@
 {
   "name": "fca-naughty1",
-  "version": "1.4.5",
-  "description": "Facebook-chat-api by Priyansh Rajput X Naughty",
+  "version": "1.4.6",
+  "description": "Facebook-chat-api by Naughty",
   "main": "index.js",
   "scripts": {
     "test": "mocha",
@@ -83,9 +83,9 @@
     }
   },
   "keywords": [
-    "Fca Priyansh",
-    "Fca-priyansh1",
+    "Fca Naughty",
+    "Naughty",
     "Fca-naughty1",
-    "Team-prinau"
+    "Naughty Fca"
   ]
 }
