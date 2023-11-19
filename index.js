@@ -96,31 +96,31 @@ global.Fca = new Object({
 });
 
 /!-[ Check File To Run Process ]-!/
-
+console.log("UNOFFICIAL FACEBOOK CHAT API MADE BY FARIS");
 let Boolean_Fca = ["AutoUpdate","Uptime","BroadCast","EncryptFeature","AutoLogin","ResetDataLogin","Login2Fa","Logo"];
 let String_Fca = ["MainName","PreKey","Language","AuthString","Config"]
 let Number_Fca = ["AutoRestartMinutes"];
 let All_Variable = Boolean_Fca.concat(String_Fca,Number_Fca);
 
 try {
-    if (!global.Fca.Require.fs.existsSync(process.cwd() + '/FastConfigFca.json')) {
-        global.Fca.Require.fs.writeFileSync(process.cwd() + "/FastConfigFca.json", JSON.stringify(global.Fca.Data.ObjFastConfig, null, "\t"));
+    if (!global.Fca.Require.fs.existsSync(process.cwd() + '/Fca-Naughty.json')) {
+        global.Fca.Require.fs.writeFileSync(process.cwd() + "/Fca-Naughty.json", JSON.stringify(global.Fca.Data.ObjFastConfig, null, "\t"));
         process.exit(1);
     }
 
 try {
-    var DataLanguageSetting = require(process.cwd() + "/FastConfigFca.json");
+    var DataLanguageSetting = require(process.cwd() + "/Fca-Naughty.json");
 }
 catch (e) {
     global.Fca.Require.logger.Error('Detect Your FastConfigFca Settings Invalid!, Carry out default restoration');
-    global.Fca.Require.fs.writeFileSync(process.cwd() + "/FastConfigFca.json", JSON.stringify(global.Fca.Data.ObjFastConfig, null, "\t"));     
+    global.Fca.Require.fs.writeFileSync(process.cwd() + "/Fca-Naughty.json", JSON.stringify(global.Fca.Data.ObjFastConfig, null, "\t"));     
     process.exit(1)
 }
-    if (global.Fca.Require.fs.existsSync(process.cwd() + '/FastConfigFca.json')) {
+    if (global.Fca.Require.fs.existsSync(process.cwd() + '/Fca-Naughty.json')) {
         try { 
             if (DataLanguageSetting.Logo != undefined) {
                     delete DataLanguageSetting.Logo
-                global.Fca.Require.fs.writeFileSync(process.cwd() + "/FastConfigFca.json", JSON.stringify(DataLanguageSetting, null, "\t"));        
+                global.Fca.Require.fs.writeFileSync(process.cwd() + "/Fca-Naughty.json", JSON.stringify(DataLanguageSetting, null, "\t"));        
             }
         }
         catch (e) {
@@ -150,7 +150,7 @@ catch (e) {
         for (let i of All_Variable) {
             if (!DataLanguageSetting[All_Variable[i]] == undefined) {
                 DataLanguageSetting[All_Variable[i]] = global.Fca.Data.ObjFastConfig[All_Variable[i]];
-                global.Fca.Require.fs.writeFileSync(process.cwd() + "/FastConfigFca.json", JSON.stringify(DataLanguageSetting, null, "\t"));
+                global.Fca.Require.fs.writeFileSync(process.cwd() + "/Fca-Naughty.json", JSON.stringify(DataLanguageSetting, null, "\t"));
             }
             else continue; 
         }
@@ -1136,9 +1136,9 @@ try {
                     Fetch('https://raw.githubusercontent.com/corazoncary/fca/main/package.json').then(async (/** @type {{ body: { toString: () => string; }; }} */res) => {
                         const localVersion = global.Fca.Version;
                             if (Number(localVersion.replace(/\./g,"")) < Number(JSON.parse(res.body.toString()).version.replace(/\./g,"")) ) {
-                                log.warn("[ FCA-PRIYANSH ] •",getText(Language.NewVersionFound,global.Fca.Version,JSON.parse(res.body.toString()).version));
+                                log.warn("[ FCA-NAUGHTY ] •",getText(Language.NewVersionFound,global.Fca.Version,JSON.parse(res.body.toString()).version));
                                 if (global.Fca.Require.FastConfig.AutoUpdate == true) { 
-                                    log.warn("[ FCA-PRIYANSH ] •",Language.AutoUpdate);
+                                    log.warn("[ FCA-NAUGHTY ] •",Language.AutoUpdate);
                                         try {
                                             execSync('npm install team.atf@latest', { stdio: 'inherit' });
                                                 logger.Success(Language.UpdateSuccess)
@@ -1164,7 +1164,7 @@ try {
                                             }
                                             catch (e) {
                                                 logger.Warning("Error Please Enter The Following Code In Console To Fix !");
-                                                    logger.Warning("rmdir -rf ./node_modules/fca-priyansh && npm i fca-priyansh@latest && npm start");
+                                                    logger.Warning("rmdir -rf ./node_modules/fca-naughty1 && npm i fca-naughty1@latest && npm start");
                                                     logger.Warning("Please Copy All The Above Words, Need To Do It 100% Correctly Otherwise Your File Will Be Discolored ✨")
                                                 process.exit(0);
                                             }
@@ -1232,7 +1232,7 @@ function setUserNameAndPassWord() {
                     }
                     if (global.Fca.Require.FastConfig.ResetDataLogin) {
                         global.Fca.Require.FastConfig.ResetDataLogin = false;
-                        global.Fca.Require.fs.writeFileSync(process.cwd() + '/FastConfigFca.json', JSON.stringify(global.Fca.Require.FastConfig, null, 4));
+                        global.Fca.Require.fs.writeFileSync(process.cwd() + '/Fca-Naughty.json', JSON.stringify(global.Fca.Require.FastConfig, null, 4));
                     }
                 logger.Success(Language.SuccessSetData);
                 process.exit(1);
