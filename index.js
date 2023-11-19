@@ -1,12 +1,7 @@
 'use strict';
 
 /**
-    * Developers: @KanzuWakazaki - @HarryWakazaki
-    ** A few words about developer appstate security.
-    *! Statement renouncing responsibility for the security of appstate encryption of the following operating systems: windows, Android, Linux operating systems,.. (maybe repl.it?),
-    *! because the above operating systems are private (except rep.it if the fraudster does not own your account or invite link to join).
-    *! If the intruder owns the computer, these private operating systems,the security of this fca cannot guarantee 100% of the time.
-    ** If the grammar is wrong, please understand because I'm just a kid 🍵.
+FACEBOOK CHAT API BY NAUGHTY
 */
 
 /!-[ Global Set ]-!/
