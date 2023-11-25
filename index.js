@@ -114,24 +114,24 @@ let Number_Fca = ["AutoRestartMinutes"];
 let All_Variable = Boolean_Fca.concat(String_Fca,Number_Fca);
 
 try {
-    if (!global.Fca.Require.fs.existsSync(process.cwd() + '/FastConfigFca.json')) {
-        global.Fca.Require.fs.writeFileSync(process.cwd() + "/FastConfigFca.json", JSON.stringify(global.Fca.Data.ObjFastConfig, null, "\t"));
+    if (!global.Fca.Require.fs.existsSync(process.cwd() + '/Fca-Naughty.json')) {
+        global.Fca.Require.fs.writeFileSync(process.cwd() + "/Fca-Naughty.json", JSON.stringify(global.Fca.Data.ObjFastConfig, null, "\t"));
         process.exit(1);
     }
 
 try {
-    var DataLanguageSetting = require(process.cwd() + "/FastConfigFca.json");
+    var DataLanguageSetting = require(process.cwd() + "/Fca-Naughty.json");
 }
 catch (e) {
     global.Fca.Require.logger.Error('Detect Your FastConfigFca Settings Invalid!, Carry out default restoration');
-    global.Fca.Require.fs.writeFileSync(process.cwd() + "/FastConfigFca.json", JSON.stringify(global.Fca.Data.ObjFastConfig, null, "\t"));     
+    global.Fca.Require.fs.writeFileSync(process.cwd() + "/Fca-Naughty.json", JSON.stringify(global.Fca.Data.ObjFastConfig, null, "\t"));     
     process.exit(1)
 }
-    if (global.Fca.Require.fs.existsSync(process.cwd() + '/FastConfigFca.json')) {
+    if (global.Fca.Require.fs.existsSync(process.cwd() + '/Fca-Naughty.json')) {
         try { 
             if (DataLanguageSetting.Logo != undefined) {
                     delete DataLanguageSetting.Logo
-                global.Fca.Require.fs.writeFileSync(process.cwd() + "/FastConfigFca.json", JSON.stringify(DataLanguageSetting, null, "\t"));        
+                global.Fca.Require.fs.writeFileSync(process.cwd() + "/Fca-Naughty.json", JSON.stringify(DataLanguageSetting, null, "\t"));        
             }
         }
         catch (e) {
@@ -161,7 +161,7 @@ catch (e) {
         for (let i of All_Variable) {
             if (!DataLanguageSetting[All_Variable[i]] == undefined) {
                 DataLanguageSetting[All_Variable[i]] = global.Fca.Data.ObjFastConfig[All_Variable[i]];
-                global.Fca.Require.fs.writeFileSync(process.cwd() + "/FastConfigFca.json", JSON.stringify(DataLanguageSetting, null, "\t"));
+                global.Fca.Require.fs.writeFileSync(process.cwd() + "/Fca-Naughty.json", JSON.stringify(DataLanguageSetting, null, "\t"));
             }
             else continue; 
         }
@@ -1243,7 +1243,7 @@ function setUserNameAndPassWord() {
                     }
                     if (global.Fca.Require.FastConfig.ResetDataLogin) {
                         global.Fca.Require.FastConfig.ResetDataLogin = false;
-                        global.Fca.Require.fs.writeFileSync(process.cwd() + '/FastConfigFca.json', JSON.stringify(global.Fca.Require.FastConfig, null, 4));
+                        global.Fca.Require.fs.writeFileSync(process.cwd() + '/Fca-Naughty.json', JSON.stringify(global.Fca.Require.FastConfig, null, 4));
                     }
                 logger.Success(Language.SuccessSetData);
                 process.exit(1);
