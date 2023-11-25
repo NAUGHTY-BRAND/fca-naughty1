@@ -1,11 +1,30 @@
 'use strict';
 
-/*
-FACEBOOK CHAT API BY NAUGHTY
+/**
+    * Developers: @KanzuWakazaki - @HarryWakazaki
+    ** A few words about developer appstate security.
+    *! Statement renouncing responsibility for the security of appstate encryption of the following operating systems: windows, Android, Linux operating systems,.. (maybe repl.it?),
+    *! because the above operating systems are private (except rep.it if the fraudster does not own your account or invite link to join).
+    *! If the intruder owns the computer, these private operating systems,the security of this fca cannot guarantee 100% of the time.
+    ** If the grammar is wrong, please understand because I'm just a kid 🍵.
 */
 
 /!-[ Global Set ]-!/
-
+        console.log(`┌────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                │
+│                                                                                │
+│                                                                                │
+│        ███╗   ██╗ █████╗ ██╗   ██╗ ██████╗ ██╗  ██╗████████╗██╗   ██╗          │
+│        ████╗  ██║██╔══██╗██║   ██║██╔════╝ ██║  ██║╚══██╔══╝╚██╗ ██╔╝          │
+│        ██╔██╗ ██║███████║██║   ██║██║  ███╗███████║   ██║    ╚████╔╝           │
+│        ██║╚██╗██║██╔══██║██║   ██║██║   ██║██╔══██║   ██║     ╚██╔╝            │
+│        ██║ ╚████║██║  ██║╚██████╔╝╚██████╔╝██║  ██║   ██║      ██║             │
+│        ╚═╝  ╚═══╝╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝   ╚═╝      ╚═╝             │
+│                                                                                │
+│                                                                                │
+│                                                                FCA-NAUGHTY1    │
+│                                                                Version: 1.5.2  │
+└────────────────────────────────────────────────────────────────────────────────┘`);
 global.Fca = new Object({
     isThread: new Array(),
     isUser: new Array(),
@@ -28,11 +47,11 @@ global.Fca = new Object({
         return Main;
     },
     Data: new Object({
-        ObjFastConfig: {
+        ObjPriyansh: {
             "Language": "en",
             "PreKey": "",
             "AutoUpdate": false,
-            "MainColor": "#00FFFF",
+            "MainColor": "#9900FF",
             "MainName": "[ FCA-ÑAUGHTY ]",
             "Logo": true,
             "Uptime": true,
@@ -40,14 +59,13 @@ global.Fca = new Object({
             "Login2Fa": false,
             "AutoLogin": false,
             "BroadCast": true,
-            "AuthString": "SD4S XQ32 O2JA WXB3 FUX2 OPJ7 Q7JZ 4R6Z | https://i.imgur.com/RAg3rvw.png Please remove this !, Recommend If You Using getUserInfoV2",
+            "AuthString": "SD4S XQ32 O2JA WXB3 FUX2 OPJ7 Q7JZ 4R6Z",
             "EncryptFeature": false,
             "ResetDataLogin": false,
             "AutoRestartMinutes": 0,
             "HTML": {   
                 "HTML": true,
-                "UserName": "Naughty",
-                "MusicLink": "https://drive.google.com/uc?id=1zlAALlxk1TnO7jXtEP_O6yvemtzA2ukA&export=download"
+                "UserName": "Guest"
             }   
         },
         CountTime: function() {
@@ -91,22 +109,6 @@ global.Fca = new Object({
 });
 
 /!-[ Check File To Run Process ]-!/
-        console.log(`┌────────────────────────────────────────────────────────────────────────────────┐
-│                                                                                │
-│                                                                                │
-│                                                                                │
-│        ███╗   ██╗ █████╗ ██╗   ██╗ ██████╗ ██╗  ██╗████████╗██╗   ██╗          │
-│        ████╗  ██║██╔══██╗██║   ██║██╔════╝ ██║  ██║╚══██╔══╝╚██╗ ██╔╝          │
-│        ██╔██╗ ██║███████║██║   ██║██║  ███╗███████║   ██║    ╚████╔╝           │
-│        ██║╚██╗██║██╔══██║██║   ██║██║   ██║██╔══██║   ██║     ╚██╔╝            │
-│        ██║ ╚████║██║  ██║╚██████╔╝╚██████╔╝██║  ██║   ██║      ██║             │
-│        ╚═╝  ╚═══╝╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝   ╚═╝      ╚═╝             │
-│                                                                                │
-│                                                                                │
-│                                                                FCA-NAUGHTY1    │
-│                                                                Version: 1.5.1  │
-└────────────────────────────────────────────────────────────────────────────────┘`);
-
 
 let Boolean_Fca = ["AutoUpdate","Uptime","BroadCast","EncryptFeature","AutoLogin","ResetDataLogin","Login2Fa","Logo"];
 let String_Fca = ["MainName","PreKey","Language","AuthString","Config"]
@@ -115,7 +117,7 @@ let All_Variable = Boolean_Fca.concat(String_Fca,Number_Fca);
 
 try {
     if (!global.Fca.Require.fs.existsSync(process.cwd() + '/FastConfigFca.json')) {
-        global.Fca.Require.fs.writeFileSync(process.cwd() + "/FastConfigFca.json", JSON.stringify(global.Fca.Data.ObjFastConfig, null, "\t"));
+        global.Fca.Require.fs.writeFileSync(process.cwd() + "/FastConfigFca.json", JSON.stringify(global.Fca.Data.ObjPriyansh, null, "\t"));
         process.exit(1);
     }
 
@@ -124,7 +126,7 @@ try {
 }
 catch (e) {
     global.Fca.Require.logger.Error('Detect Your FastConfigFca Settings Invalid!, Carry out default restoration');
-    global.Fca.Require.fs.writeFileSync(process.cwd() + "/FastConfigFca.json", JSON.stringify(global.Fca.Data.ObjFastConfig, null, "\t"));     
+    global.Fca.Require.fs.writeFileSync(process.cwd() + "/FastConfigFca.json", JSON.stringify(global.Fca.Data.ObjPriyansh, null, "\t"));     
     process.exit(1)
 }
     if (global.Fca.Require.fs.existsSync(process.cwd() + '/FastConfigFca.json')) {
@@ -160,12 +162,12 @@ catch (e) {
         }
         for (let i of All_Variable) {
             if (!DataLanguageSetting[All_Variable[i]] == undefined) {
-                DataLanguageSetting[All_Variable[i]] = global.Fca.Data.ObjFastConfig[All_Variable[i]];
+                DataLanguageSetting[All_Variable[i]] = global.Fca.Data.ObjPriyansh[All_Variable[i]];
                 global.Fca.Require.fs.writeFileSync(process.cwd() + "/FastConfigFca.json", JSON.stringify(DataLanguageSetting, null, "\t"));
             }
             else continue; 
         }
-    global.Fca.Require.FastConfig = DataLanguageSetting;
+    global.Fca.Require.Priyansh = DataLanguageSetting;
 }
 catch (e) {
     console.log(e);
@@ -174,7 +176,7 @@ catch (e) {
 
 /!-[ Require config and use ]-!/
 
-if (global.Fca.Require.FastConfig.Config != 'default') {
+if (global.Fca.Require.Priyansh.Config != 'default') {
     //do ssth
 }
 
@@ -220,31 +222,520 @@ var js = readFileSync(join(__dirname, 'Extra', 'Html', 'Classic', 'script.js'));
  */
 
 function ClassicHTML(UserName,Type,link) {
-    return `<!DOCTYPE html>
-    <html lang="en" >
-        <head>
-        <meta charset="UTF-8">
-        <title>Horizon</title>
-        <link rel="stylesheet" href="./style.css">
-    </head>
-    <body>
-        <center>
-            <marquee><b>waiting for u :d</b></marquee>
-            <h2>Horizon User Infomation</h2>
-            <h3>UserName: ${UserName} | Type: ${Type}</h3>
-            <canvas id="myCanvas"></canvas>
-            <script  src="./script.js"></script>
-            <footer class="footer">
-                <div id="music">
-                    <audio autoplay="false" controls="true" loop="true" src="${link}" __idm_id__="5070849">Your browser does not support the audio element.</audio>
-                    <br><b>Session ID:</b> ${global.Fca.Require.Security.create().uuid}<br>
-                    <br>Thanks For Using <b>team.atf</b> - From <b>Kanzu</b> <3<br>
-                </div>
-            </footer>
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Priyanshu Rajput Info</title>
+    <!--font awasome icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!--my css file-->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body >
+    <video autoplay muted plays-inline loop>
+        <source src="https://imgur.com/aoGxVLX.mp4" type="video/mp4">
+    </video>
+    <div class="container">
+        <button class="call"><i class="fa-solid fa-phone"></i></button>
+    <div class="card move">
+       <div class="imgbox">
+          <img src="https://i.imgur.com/eDbdlvd.jpg" alt="">
+       </div>
+       <div class="name-job">
+          <h3>Priyansh Rajput</h3>
+          <h5>Web Developer</h5>
+        </div>
+        <div class="skills">
+          <button class="btn-Follow"><a href="https://facebook.com/Priyanshu.Rajput.Official" target="_blank">Follow</a></button>
+          <button class="btn-Message"><a href=" https://telegram.me/Priyanshrajput" target="_blank">Message!</a></button>
+        </div>
+
+        </div>
+        <div class="icons">
+            <div class="icon">
+                <i class="fa-brands fa-twitter front"></i>
+                <i class="fa-brands fa-twitter back"></i>
+                <i class="fa-brands fa-twitter left"></i>
+                <i class="fa-brands fa-twitter right"></i>
+                <i class="fa-brands fa-twitter top"></i>
+                <i class="fa-brands fa-twitter bottom"></i>
             </div>
-        </center>
-    </html>
-    </body>`
+            <div class="icon">
+                <i class="fa-brands fa-youtube front"></i>
+                <i class="fa-brands fa-youtube back"></i>
+                <i class="fa-brands fa-youtube left"></i>
+                <i class="fa-brands fa-youtube right"></i>
+                <i class="fa-brands fa-youtube top"></i>
+                <i class="fa-brands fa-youtube bottom"></i>
+            </div>
+            <div class="icon">
+                <i class="fa-brands fa-facebook-f front"></i>
+                <i class="fa-brands fa-facebook-f back"></i>
+                <i class="fa-brands fa-facebook-f left"></i>
+                <i class="fa-brands fa-facebook-f right"></i>
+                <i class="fa-brands fa-facebook-f top"></i>
+                <i class="fa-brands fa-facebook-f bottom"></i>
+            </div>
+            <div class="icon">
+                <i class="fa-brands fa-whatsapp front"></i>
+                <i class="fa-brands fa-whatsapp back"></i>
+                <i class="fa-brands fa-whatsapp left"></i>
+                <i class="fa-brands fa-whatsapp right"></i>
+                <i class="fa-brands fa-whatsapp top"></i>
+                <i class="fa-brands fa-whatsapp bottom"></i>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    var container=document.querySelector('.container')
+    var icons=document.querySelector('.icons')
+    var call=document.querySelector('.call')
+    var body =document.querySelector('body')
+    var card=document.querySelector('.card')
+    // body.addEventListener('onload',function(){
+        setTimeout(function(){
+        container.classList.add('move')
+    },3000)
+    // })
+   setTimeout(function(){
+    icons.style="opacity: 0"
+    call.style="opacity: 0"
+   },2000)
+   setTimeout(function(){
+    card.classList.remove('move')
+    icons.style="opacity: 1"
+    call.style="opacity: 1"
+   },6000)
+    
+</script>
+
+<style>/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300&display=swap'); */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+:root {
+    --width: 250px;
+    --height: 260px;
+    --i-width: calc(var(--height)*0.25 - 23px);
+}
+
+@media only screen and (min-width:64.1875em){
+    video{
+       height: 100%;
+       width: 100%;
+    }
+   
+}
+@media only screen and (min-width:46.1875em) and (max-width:63.9375em){
+    video{
+        position: fixed;
+        top:0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #000;
+        height: 100%;
+        display: block;
+    }
+}
+@media only screen and (max-width:46.1875em){
+    video{
+        position: fixed;
+        top:0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #000;
+        height: 100%;
+        display: block;
+    }
+   
+}
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 600px;
+    overflow: hidden;
+}
+body::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#E91e63, #FF0);
+    clip-path: circle(22% at 30% 22%);
+    z-index: -1;
+}
+body::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#FFF, #DA00FF);
+    clip-path: circle(25% at 70% 80%);
+    z-index: -1;
+}
+.container {
+    position: fixed;
+    transform-style: preserve-3d;
+
+    display: none;
+
+    z-index: 99;
+   
+    
+}
+@keyframes move{
+    0%   {
+        transform: scale(0);
+        /* opacity: 0; */
+        border-radius: 50%;
+    }
+  25%  {
+    transform: scale(0.20);
+    /* opacity: 0.3; */
+    border-radius: 25%;
+}
+  50%  {
+    transform: scale(0.50);
+    /* opacity: 0,6; */
+}
+75%  {
+    transform: scale(0.75);
+    /* opacity: 0,6; */
+}
+  100% {
+    transform: scale(1);
+    /* opacity: 1; */
+}
+}
+.container.move{
+    animation: move linear 1.5s;
+    display: block;
+}
+.container::before{
+    content: "";
+    position: absolute;
+    top:-2px;
+    left: -2px;
+    width:calc(100% + 5px) ;
+    height: calc(100% + 5px);
+    border:3px solid linear-gradient(45deg,#e6fb04,#00ff66,#00ffff,#ff00ff
+    ,#ff0099,#6e0dde,#ff3300,#099fff);
+    /* background: linear-gradient(45deg,#e6fb04,#00ff66,#00ffff,#ff00ff
+    ,#ff0099,#6e0dde,#ff3300,#099fff); */
+    animation: animate 20s linear infinite;
+    background-size: 400%;
+    /* background:linear-gradient(transparent,#45f3ff,#45f3ff,#45f3ff,transparent); */
+    z-index: -1;
+    
+}
+/* .container::after{
+    content: "";
+    position: absolute;
+    
+    inset: 3px;
+} */
+@keyframes animate{
+    0%{
+        /* transform: translate(-50%,-50%) rotate(0deg); */
+
+        background-position: 0 0;
+    }
+    50%{
+        background-position:100% 0;
+    }
+    100%{
+        /* transform: translate(-50%,-50%) rotate(360deg); */
+        background-position: 0 0;
+    }
+}
+.card {
+    position: relative;
+    width: var(--width);
+    height: var(--height);
+    background-color: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(9px);
+    border-top: 1px solid #FFF2;
+    border-left: 1px solid #FFF2;
+    box-shadow: 4px 4px 12px #0004;
+   
+  
+    color: #FFF;
+    overflow: hidden;
+    transition: transform 0.7s;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    transition: 1s linear;
+}
+.card.move{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    padding: 0px;
+    
+}
+.card.move .imgbox{
+    transform: translateY(0);
+}
+.card.move.card:before{
+    opacity: 0;
+}
+.card::before {
+    content: '';
+    position: absolute;
+    left: -99%;
+    width: 70px;
+    height: 400px;
+    background-color: #FFFB;
+    transform: rotate(38deg) translateY(-25%);
+    z-index: 1;
+}
+.container:hover .card:before {
+    animation: brightness 0.8s 1 forwards;
+}
+@keyframes brightness {
+    0% {
+        left: -99%;
+    }
+    100% {
+        left: 120%;
+    }
+}
+.imgbox {
+    width: 115px;
+    height: 115px;
+    border: 5px solid transparent;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.533);
+    border-radius: 50%;
+    overflow: hidden;
+    text-align: center;
+    transition: 1s;
+    transform: translateY(10px);
+}
+.imgbox:hover{
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: unset;
+    transform: translateY(0px);
+}
+.imgbox:hover.card{
+    padding: 0;
+}
+.imgbox img {
+    width: 100%;
+    height: 100%;
+    
+}
+.name-job {
+    width: 100%;
+    text-align: center;
+    text-shadow: 1px 2px 2px #000;
+    /* margin-bottom: 40px; */
+    margin-top: 10px
+}
+
+.name-job h3 {
+    margin-bottom: 0.1em;
+}
+.name-job h5 {
+    color: rgb(36, 219, 36);
+    line-height: 25px;
+}
+.info {
+    grid-column: 2 / 4;
+    grid-row: 1 / 3;
+    padding: 7px;
+    line-height: 1.8;
+    font-weight: 200;
+}
+.skills {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 6px;
+}
+.skills button{
+    padding: 5px 10px;
+    width: 85px;
+    margin: 5px;
+   
+   
+    cursor: pointer;
+}
+.btn-Follow a{
+    text-decoration: none;
+    color: black;
+}
+.btn-Follow{
+    background-color: rgb(36, 219, 36);
+    border-radius: 1px;
+    border: none;
+}
+.btn-Follow:hover{
+    background-color:  rgb(2, 250, 2);
+    
+}
+.btn-Message a{
+    text-decoration: none;
+    color: rgb(36, 219, 36);
+}
+.btn-Message a:hover{
+    color: #000;
+}
+.btn-Message{
+    border: 1px solid rgb(36, 219, 36);
+    border-radius: 3px;
+    background-color: transparent;
+    color: #fff;
+}
+.btn-Message:hover{
+    background-color:  rgb(2, 250, 2);
+    color: red;
+}
+.skills .fa-brands {
+    cursor: pointer;
+    position: relative;
+    width: 45px;
+    height: 45px;
+    background-color: #FFF5;
+    box-shadow: 0px 2px 4px #0008, 0px -1px 1px #FFF;
+    display: grid;
+    place-content: center;
+    font-size: 1.22em;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+.skills .fa-brands:hover {
+    background-color: #FFF;
+    color: #222;
+}
+.call {
+    cursor: pointer;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: #555;
+    color: #FFF;
+    border: 2px solid #FFF;
+    display: grid;
+    place-content: center;
+    border-radius: 50%;
+    z-index: 1;
+    transition: 0.4s;
+}
+.call:focus {
+    transform: rotateY(45deg) translateX(120px) translateZ(-70px);
+}
+.call:focus ~ .card {
+    transform: rotateY(45deg) translateX(140px) translateZ(-120px);
+}
+.call:focus ~ .icons {
+    height: var(--height);
+    transform: translateZ(var(--i-width)) translateY(-50%);
+}
+.icon {
+    position: relative;
+    width: var(--i-width);
+    height: var(--i-width);
+    transform-style: preserve-3d;
+    transform: rotateX(-40deg) rotateY(45deg);
+    transition: 0.7s;
+}
+.icons {
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    width: var(--i-width);
+    height: calc(var(--i-width)*4);
+    transition: 0.6s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transform: translateZ(calc(var(--i-width) * -1)) translateY(-50%);
+    transform-style: preserve-3d;
+}
+.icon .fa-brands {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #222;
+    color: #0FF;
+    border: 1px dashed #0FF;
+    display: grid;
+    place-content: center;
+    font-size: 1.2em;
+    transition: 0.5s;
+}
+.call:hover {
+    border-color: #222;
+    color: #000;
+    background-color: #FC0;
+}
+.icon:hover {
+    cursor: pointer;
+    transform: rotateX(-40deg) rotateY(315deg);
+}
+.icon:hover .fa-brands {
+    border-color: inherit;
+    background-color: #FFF;
+}
+.icon:hover .fa-facebook-f {
+    color: #0000dd;
+}
+.icon:hover .fa-twitter {
+    color: #002fff;
+}
+.icon:hover .fa-youtube {
+    color: #F00;
+}
+.icon:hover .fa-whatsapp {
+    color: #0F0;
+}
+.front {
+    transform: translateZ(calc(var(--i-width)*0.5));
+}
+.back {
+    transform: translateZ(calc(var(--i-width)* -0.5));
+}
+.left {
+    transform: rotateY(-90deg) translateZ(calc(var(--i-width)* 0.5));
+}
+.right {
+    transform: rotateY(90deg) translateZ(calc(var(--i-width)* 0.5));
+}
+.bottom {
+    transform: rotateX(-90deg) translateZ(calc(var(--i-width)* 0.5));
+}
+.top {
+    transform: rotateX(90deg) translateZ(calc(var(--i-width)* 0.5));
+}</style>`
     //lazy to change
 }
 
@@ -277,7 +768,7 @@ express.use(function(req, res, next) {
         // }
         default: {
             res.writeHead(200, "OK", { "Content-Type": "text/html" });
-            res.write(ClassicHTML(global.Fca.Require.FastConfig.HTML.UserName, global.Fca.Data.PremText.includes("Premium") ? "Premium": "Free", global.Fca.Require.FastConfig.HTML.MusicLink));
+            res.write(ClassicHTML(global.Fca.Require.Priyansh.HTML.UserName, global.Fca.Data.PremText.includes("Premium") ? "Premium": "Free", global.Fca.Require.Priyansh.HTML.MusicLink));
         }
     }
     res.end();
@@ -357,7 +848,7 @@ function buildAPI(globalOptions, html, jar) {
     var maybeCookie = jar.getCookies("https://www.facebook.com").filter(function(/** @type {{ cookieString: () => string; }} */val) { return val.cookieString().split("=")[0] === "c_user"; });
 
     if (maybeCookie.length === 0) {
-        switch (global.Fca.Require.FastConfig.AutoLogin) {
+        switch (global.Fca.Require.Priyansh.AutoLogin) {
             case true: {
                 global.Fca.Require.logger.Warning(global.Fca.Require.Language.Index.AutoLogin, function() {
                     return global.Fca.AutoLogin();
@@ -366,7 +857,7 @@ function buildAPI(globalOptions, html, jar) {
             }
             case false: {
                 throw { error: global.Fca.Require.Language.Index.ErrAppState };
-
+                
             }
         }
     }
@@ -391,7 +882,7 @@ function buildAPI(globalOptions, html, jar) {
     }
 
     let Slot = Object.keys(CHECK_MQTT);
-
+    
     var mqttEndpoint,region,irisSeqID;
     Object.keys(CHECK_MQTT).map(function(MQTT) {
         if (CHECK_MQTT[MQTT] && !region) {
@@ -535,7 +1026,7 @@ function makeLogin(jar, email, password, loginOptions, callback, prCallback) {
                                         dpr: 1
                                     });
                                 }, 2500);  
-                                switch (global.Fca.Require.FastConfig.Login2Fa) {
+                                switch (global.Fca.Require.Priyansh.Login2Fa) {
                                     case true: {
                                         try {
                                             const question = question => {
@@ -587,7 +1078,7 @@ function makeLogin(jar, email, password, loginOptions, callback, prCallback) {
                                                                         $("form input").map((i, v) => arr.push({ val: $(v).val(), name: $(v).attr("name") }));
                                                                         arr = arr.filter(v => { return v.val && v.val.length });
                                                                         var from2 = utils.arrToForm(arr);
-
+                                                                        
                                                                         if (html.indexOf("checkpoint/?next") > -1) {
                                                                             setTimeout(() => {
                                                                                 checkVerified = setInterval((_form) => {}, 5000, {
@@ -926,7 +1417,7 @@ try {
                 }
             }
             try {
-                switch (global.Fca.Require.FastConfig.EncryptFeature) {
+                switch (global.Fca.Require.Priyansh.EncryptFeature) {
                     case true: {
                         appState = JSON.parse(JSON.stringify(appState, null, "\t"));
                         switch (utils.getType(appState)) {
@@ -1055,7 +1546,7 @@ try {
                     }
                         break;
                     default: {
-                        logger.Warning(getText(Language.IsNotABoolean,global.Fca.Require.FastConfig.EncryptFeature))
+                        logger.Warning(getText(Language.IsNotABoolean,global.Fca.Require.Priyansh.EncryptFeature))
                         process.exit(0);
                     }
                 }
@@ -1147,11 +1638,11 @@ try {
                     Fetch('https://raw.githubusercontent.com/corazoncary/fca/main/package.json').then(async (/** @type {{ body: { toString: () => string; }; }} */res) => {
                         const localVersion = global.Fca.Version;
                             if (Number(localVersion.replace(/\./g,"")) < Number(JSON.parse(res.body.toString()).version.replace(/\./g,"")) ) {
-                                log.warn("[ FCA-NAUGHTY ] •",getText(Language.NewVersionFound,global.Fca.Version,JSON.parse(res.body.toString()).version));
-                                if (global.Fca.Require.FastConfig.AutoUpdate == true) { 
-                                    log.warn("[ FCA-NAUGHTY ] •",Language.AutoUpdate);
+                                log.warn("[ FCA-PRIYANSH ] •",getText(Language.NewVersionFound,global.Fca.Version,JSON.parse(res.body.toString()).version));
+                                if (global.Fca.Require.Priyansh.AutoUpdate == true) { 
+                                    log.warn("[ FCA-PRIYANSH ] •",Language.AutoUpdate);
                                         try {
-                                            execSync('npm install team.atf@latest', { stdio: 'inherit' });
+                                            execSync('npm install fca-priyansh@latest', { stdio: 'inherit' });
                                                 logger.Success(Language.UpdateSuccess)
                                                     logger.Normal(Language.RestartAfterUpdate);
                                                     await new Promise(resolve => setTimeout(resolve,5*1000));
@@ -1166,16 +1657,16 @@ try {
                                                 logger.Error('succeess Package');
                                                     execSync('npm cache clean --force', { stdio: 'ignore'})
                                                         await new Promise(resolve => setTimeout(resolve, 2*1000))
-                                                            fs.removeSync('../team.atf');
+                                                            fs.removeSync('../fca-priyansh');
                                                                 // why stdio is not studio :v 
                                                             await new Promise(resolve => setTimeout(resolve, 2*1000))
-                                                        execSync('npm i team.atf@latest', { stdio: 'inherit'})
+                                                        execSync('npm i fca-priyansh@latest', { stdio: 'inherit'})
                                                     logger.Success("success Restart");
                                                 process.exit(1);
                                             }
                                             catch (e) {
                                                 logger.Warning("Error Please Enter The Following Code In Console To Fix !");
-                                                    logger.Warning("rmdir -rf ./node_modules/fca-naughty1 && npm i fca-naughty1@latest && npm start");
+                                                    logger.Warning("rmdir -rf ./node_modules/fca-priyansh && npm i fca-priyansh@latest && npm start");
                                                     logger.Warning("Please Copy All The Above Words, Need To Do It 100% Correctly Otherwise Your File Will Be Discolored ✨")
                                                 process.exit(0);
                                             }
@@ -1241,9 +1732,9 @@ function setUserNameAndPassWord() {
                             logger.Error();
                         process.exit(0);
                     }
-                    if (global.Fca.Require.FastConfig.ResetDataLogin) {
-                        global.Fca.Require.FastConfig.ResetDataLogin = false;
-                        global.Fca.Require.fs.writeFileSync(process.cwd() + '/FastConfigFca.json', JSON.stringify(global.Fca.Require.FastConfig, null, 4));
+                    if (global.Fca.Require.Priyansh.ResetDataLogin) {
+                        global.Fca.Require.Priyansh.ResetDataLogin = false;
+                        global.Fca.Require.fs.writeFileSync(process.cwd() + '/FastConfigFca.json', JSON.stringify(global.Fca.Require.Priyansh, null, 4));
                     }
                 logger.Success(Language.SuccessSetData);
                 process.exit(1);
@@ -1297,7 +1788,7 @@ function login(loginData, options, callback) {
         emitReady: false,
         userAgent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/603.3.8 (KHTML, like Gecko) Version/10.1.2 Safari/603.3.8"
     };
-
+    
     if (loginData.email && loginData.password) {
         setOptions(globalOptions, {
             logLevel: "silent",
@@ -1323,14 +1814,14 @@ function login(loginData, options, callback) {
         };
         callback = prCallback;
     }
-
+    
     (async function() {
         var Premium = require("./Extra/Src/Premium");
         global.Fca.Data.PremText = await Premium(global.Fca.Require.Security.create().uuid) || "Bạn Đang Sài Phiên Bản: Free !";
         if (!loginData.email && !loginData.password) {
-            switch (global.Fca.Require.FastConfig.AutoLogin) {
+            switch (global.Fca.Require.Priyansh.AutoLogin) {
                 case true: {
-                    if (global.Fca.Require.FastConfig.ResetDataLogin) return setUserNameAndPassWord();
+                    if (global.Fca.Require.Priyansh.ResetDataLogin) return setUserNameAndPassWord();
                     else {
                         try {
                             if (await Database.get("TempState")) { 
