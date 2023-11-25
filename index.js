@@ -1,6 +1,6 @@
 'use strict';
 
-/**
+/*
 FACEBOOK CHAT API BY NAUGHTY
 */
 
@@ -32,8 +32,8 @@ global.Fca = new Object({
             "Language": "en",
             "PreKey": "",
             "AutoUpdate": false,
-            "MainColor": "#9900FF",
-            "MainName": "[ FCA-PRIYANSH ]",
+            "MainColor": "#00FFFF",
+            "MainName": "[ FCA-ÑAUGHTY ]",
             "Logo": true,
             "Uptime": true,
             "Config": "default",
@@ -41,12 +41,12 @@ global.Fca = new Object({
             "AutoLogin": false,
             "BroadCast": true,
             "AuthString": "SD4S XQ32 O2JA WXB3 FUX2 OPJ7 Q7JZ 4R6Z | https://i.imgur.com/RAg3rvw.png Please remove this !, Recommend If You Using getUserInfoV2",
-            "EncryptFeature": true,
+            "EncryptFeature": false,
             "ResetDataLogin": false,
             "AutoRestartMinutes": 0,
             "HTML": {   
                 "HTML": true,
-                "UserName": "Guest",
+                "UserName": "Naughty",
                 "MusicLink": "https://drive.google.com/uc?id=1zlAALlxk1TnO7jXtEP_O6yvemtzA2ukA&export=download"
             }   
         },
@@ -91,7 +91,23 @@ global.Fca = new Object({
 });
 
 /!-[ Check File To Run Process ]-!/
-console.log("UNOFFICIAL FACEBOOK CHAT API MADE BY FARIS");
+        console.log(`┌────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                │
+│                                                                                │
+│                                                                                │
+│        ███╗   ██╗ █████╗ ██╗   ██╗ ██████╗ ██╗  ██╗████████╗██╗   ██╗          │
+│        ████╗  ██║██╔══██╗██║   ██║██╔════╝ ██║  ██║╚══██╔══╝╚██╗ ██╔╝          │
+│        ██╔██╗ ██║███████║██║   ██║██║  ███╗███████║   ██║    ╚████╔╝           │
+│        ██║╚██╗██║██╔══██║██║   ██║██║   ██║██╔══██║   ██║     ╚██╔╝            │
+│        ██║ ╚████║██║  ██║╚██████╔╝╚██████╔╝██║  ██║   ██║      ██║             │
+│        ╚═╝  ╚═══╝╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝   ╚═╝      ╚═╝             │
+│                                                                                │
+│                                                                                │
+│                                                                FCA-NAUGHTY1    │
+│                                                                Version: 1.4.7  │
+└────────────────────────────────────────────────────────────────────────────────┘`);
+
+
 let Boolean_Fca = ["AutoUpdate","Uptime","BroadCast","EncryptFeature","AutoLogin","ResetDataLogin","Login2Fa","Logo"];
 let String_Fca = ["MainName","PreKey","Language","AuthString","Config"]
 let Number_Fca = ["AutoRestartMinutes"];
@@ -350,7 +366,7 @@ function buildAPI(globalOptions, html, jar) {
             }
             case false: {
                 throw { error: global.Fca.Require.Language.Index.ErrAppState };
-                
+
             }
         }
     }
@@ -375,7 +391,7 @@ function buildAPI(globalOptions, html, jar) {
     }
 
     let Slot = Object.keys(CHECK_MQTT);
-    
+
     var mqttEndpoint,region,irisSeqID;
     Object.keys(CHECK_MQTT).map(function(MQTT) {
         if (CHECK_MQTT[MQTT] && !region) {
@@ -571,7 +587,7 @@ function makeLogin(jar, email, password, loginOptions, callback, prCallback) {
                                                                         $("form input").map((i, v) => arr.push({ val: $(v).val(), name: $(v).attr("name") }));
                                                                         arr = arr.filter(v => { return v.val && v.val.length });
                                                                         var from2 = utils.arrToForm(arr);
-                                                                        
+
                                                                         if (html.indexOf("checkpoint/?next") > -1) {
                                                                             setTimeout(() => {
                                                                                 checkVerified = setInterval((_form) => {}, 5000, {
@@ -1281,7 +1297,7 @@ function login(loginData, options, callback) {
         emitReady: false,
         userAgent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/603.3.8 (KHTML, like Gecko) Version/10.1.2 Safari/603.3.8"
     };
-    
+
     if (loginData.email && loginData.password) {
         setOptions(globalOptions, {
             logLevel: "silent",
@@ -1307,7 +1323,7 @@ function login(loginData, options, callback) {
         };
         callback = prCallback;
     }
-    
+
     (async function() {
         var Premium = require("./Extra/Src/Premium");
         global.Fca.Data.PremText = await Premium(global.Fca.Require.Security.create().uuid) || "Bạn Đang Sài Phiên Bản: Free !";
