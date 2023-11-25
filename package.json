@@ -1,6 +1,6 @@
 {
   "name": "fca-naughty1",
-  "version": "1.4.6",
+  "version": "1.4.7",
   "description": "Facebook-chat-api by Naughty",
   "main": "index.js",
   "scripts": {
@@ -11,12 +11,12 @@
   "author": "Naughty",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/priyanshu192/try/issues"
+    "url": "https://github.com/"
   },
-  "homepage": "https://github.com/priyanshu192/try#readme",
+  "homepage": "https://github.com/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/priyanshu192/try.git"
+    "url": "https://github.com/"
   },
   "dependencies": {
     "aes-js": "latest",
