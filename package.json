@@ -1,6 +1,6 @@
 {
   "name": "fca-naughty1",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "description": "Facebook-chat-api by Naughty",
   "main": "index.js",
   "scripts": {
