@@ -168,10 +168,7 @@ module.exports = function(defaultFuncs, api, ctx) {
       };
     }
 
-      // được tìm thấy vào giữa tháng 8/2022 bởi @KanzuWakazaki - đã được chia sẻ cho @D-Jukie và Horizon Team Public group 🤴
-      // những code tương tự muliti thread như này đều có thể là copy idea 🐧
-      // đã áp dụng vào fca mới(cloud - fca(private)) vào cuối tháng 8/2022 bởi @IteralingCode(Hidden Member( always :) )) - Synthetic 4 - @Horizon Team
-      //cập nhật dự án bị bỏ rơi này vào ngày 19/11/2022 bởi @KanzuWakazaki(Owner) - Synthetic 1  - @Horizon Team nhằm đáp ứng nhu cầu của client !
+      // Unofficial Facebook Chat Api By Ñaughty
 
       var time = new Date().toLocaleDateString('vi-VN',  {minute: 'numeric' }).split(',')[0]
 
