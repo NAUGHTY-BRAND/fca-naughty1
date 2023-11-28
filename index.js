@@ -23,7 +23,7 @@
 │                                                                                │
 │                                                                                │
 │                                                                FCA-NAUGHTY1    │
-│                                                                Version: 1.5.2  │
+│                                                                Version: 1.5.3  │
 └────────────────────────────────────────────────────────────────────────────────┘`);
 global.Fca = new Object({
     isThread: new Array(),
