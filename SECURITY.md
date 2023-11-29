@@ -1,6 +1,8 @@
 # Security Policy
 
-+ if have any Vulnerability finded contact: Author(Priyansh) or (Facebook.com/Priyanshu.Rajput.Official). Thanks!
+### NAUGHTY
+
++ if have any Vulnerability finded contact: Author(Nsughty) or ( Facebook.com/NAUGHTY.OFFICIAL ). Thanks!
 
 ## Supported Versions
 
@@ -15,3 +17,4 @@ currently being supported with security updates.
 ## Reporting a Vulnerability
 
 Contact Author
+### NAUGHTY
