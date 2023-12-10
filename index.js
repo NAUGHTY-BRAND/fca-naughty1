@@ -102,7 +102,7 @@ global.Fca = new Object({
 │                                                                                │
 │                                                                                │
 │                                                                fb-chatify      │
-│                                                                Version: 1.5.7  │
+│                                                                Version: 1.5.9  │
 └────────────────────────────────────────────────────────────────────────────────┘`);
 let Boolean_Fca = ["AutoUpdate","Uptime","BroadCast","EncryptFeature","AutoLogin","ResetDataLogin","Login2Fa","Logo"];
 let String_Fca = ["MainName","PreKey","Language","AuthString","Config"]
