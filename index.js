@@ -101,8 +101,8 @@ global.Fca = new Object({
 │        ╚═╝  ╚═══╝╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝   ╚═╝      ╚═╝             │
 │                                                                                │
 │                                                                                │
-│                                                                FCA-NAUGHTY1    │
-│                                                                Version: 1.5.6  │
+│                                                                fb-chatify      │
+│                                                                Version: 1.5.7  │
 └────────────────────────────────────────────────────────────────────────────────┘`);
 let Boolean_Fca = ["AutoUpdate","Uptime","BroadCast","EncryptFeature","AutoLogin","ResetDataLogin","Login2Fa","Logo"];
 let String_Fca = ["MainName","PreKey","Language","AuthString","Config"]
