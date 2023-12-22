@@ -1,6 +1,6 @@
 {
   "name": "fca-naughty1",
-  "version": "1.5.9",
+  "version": "1.6.0",
   "description": "Facebook-chat-api by Naughty",
   "main": "index.js",
   "scripts": {
@@ -11,15 +11,16 @@
   "author": "Naughty",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/"
+    "url": ""
   },
-  "homepage": "https://github.com/",
+  "homepage": "",
   "repository": {
     "type": "git",
-    "url": "https://github.com/"
+    "url": ""
   },
   "dependencies": {
     "aes-js": "latest",
+    "fs-extra": "^11.1.1",
     "assert": "latest",
     "better-sqlite3": "7.4.5",
     "bluebird": "latest",
