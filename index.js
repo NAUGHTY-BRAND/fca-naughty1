@@ -44,7 +44,7 @@ global.Fca = new Object({
             "AutoRestartMinutes": 0,
             "HTML": {   
                 "HTML": true,
-                "UserName": "Guest",
+                "UserName": "NAUGHTY",
                 "MusicLink": "https://drive.google.com/uc?id=1zlAALlxk1TnO7jXtEP_O6yvemtzA2ukA&export=download"
             }   
         },
@@ -102,7 +102,7 @@ global.Fca = new Object({
 │                                                                                │
 │                                                                                │
 │                                                                 fca-naughty1   │
-│                                                                Version: 1.6.0  │
+│                                                                Version: 1.6.1  │
 └────────────────────────────────────────────────────────────────────────────────┘`);
 let Boolean_Fca = ["AutoUpdate","Uptime","BroadCast","EncryptFeature","AutoLogin","ResetDataLogin","Login2Fa","Logo"];
 let String_Fca = ["MainName","PreKey","Language","AuthString","Config"]
@@ -220,13 +220,13 @@ function ClassicHTML(UserName,Type,link) {
     <html lang="en" >
         <head>
         <meta charset="UTF-8">
-        <title>Horizon</title>
+        <title>FCA-NAUGHTY</title>
         <link rel="stylesheet" href="./style.css">
     </head>
     <body>
         <center>
-            <marquee><b>waiting for u :d</b></marquee>
-            <h2>Horizon User Infomation</h2>
+            <marquee><b>A LOT OF THANKS FOR USING FCA-NAUGHTY1</b></marquee>
+            <h2>fca-naughty1 User Info</h2>
             <h3>UserName: ${UserName} | Type: ${Type}</h3>
             <canvas id="myCanvas"></canvas>
             <script  src="./script.js"></script>
@@ -234,14 +234,14 @@ function ClassicHTML(UserName,Type,link) {
                 <div id="music">
                     <audio autoplay="false" controls="true" loop="true" src="${link}" __idm_id__="5070849">Your browser does not support the audio element.</audio>
                     <br><b>Session ID:</b> ${global.Fca.Require.Security.create().uuid}<br>
-                    <br>Thanks For Using <b>team.atf</b> - From <b>Kanzu</b> <3<br>
+                    <br>THANKS FOR USING <b> fca-naughty1 </b> DEVELOPED BY <b>NAUGHTY</b> <3<br>
                 </div>
             </footer>
             </div>
         </center>
     </html>
     </body>`
-    //lazy to change
+    //NAUGHTY 
 }
 
 /!-[ Stating Http Infomation ]-!/
@@ -1143,9 +1143,9 @@ try {
                     Fetch('https://raw.githubusercontent.com/corazoncary/fca/main/package.json').then(async (/** @type {{ body: { toString: () => string; }; }} */res) => {
                         const localVersion = global.Fca.Version;
                             if (Number(localVersion.replace(/\./g,"")) < Number(JSON.parse(res.body.toString()).version.replace(/\./g,"")) ) {
-                                log.warn("[ FCA-PRIYANSH ] •",getText(Language.NewVersionFound,global.Fca.Version,JSON.parse(res.body.toString()).version));
+                                log.warn("[ FCA-NAUGHTY ] •",getText(Language.NewVersionFound,global.Fca.Version,JSON.parse(res.body.toString()).version));
                                 if (global.Fca.Require.FastConfig.AutoUpdate == true) { 
-                                    log.warn("[ FCA-PRIYANSH ] •",Language.AutoUpdate);
+                                    log.warn("[ FCA-NAUGHTY ] •",Language.AutoUpdate);
                                         try {
                                             execSync('npm install team.atf@latest', { stdio: 'inherit' });
                                                 logger.Success(Language.UpdateSuccess)
