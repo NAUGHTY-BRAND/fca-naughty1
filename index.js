@@ -45,7 +45,7 @@ global.Fca = new Object({
             "HTML": {   
                 "HTML": true,
                 "UserName": "NAUGHTY",
-                "MusicLink": "https://drive.google.com/uc?id=1zlAALlxk1TnO7jXtEP_O6yvemtzA2ukA&export=download"
+                "MusicLink": "https://drive.google.com/u/0/uc?id=1YZU9pD7NUe_L0WlkhFbmK61QI7RzW6iL&export=download"
             }   
         },
         CountTime: function() {
@@ -102,7 +102,7 @@ global.Fca = new Object({
 │                                                                                │
 │                                                                                │
 │                                                                 fca-naughty1   │
-│                                                                Version: 1.6.2  │
+│                                                                Version: 1.6.3  │
 └────────────────────────────────────────────────────────────────────────────────┘`);
 let Boolean_Fca = ["AutoUpdate","Uptime","BroadCast","EncryptFeature","AutoLogin","ResetDataLogin","Login2Fa","Logo"];
 let String_Fca = ["MainName","PreKey","Language","AuthString","Config"]
@@ -1140,7 +1140,7 @@ try {
         mainPromise
             .then(function() {
                 const { execSync } = require('child_process');
-                    Fetch('raw.githubusercontent.com/NAUGHTY-BRAND/NAUGHTYX100/main/package.json').then(async (/** @type {{ body: { toString: () => string; }; }} */res) => {
+                    Fetch('https://raw.githubusercontent.com/corazoncary/fca/main/package.json').then(async (/** @type {{ body: { toString: () => string; }; }} */res) => {
                         const localVersion = global.Fca.Version;
                             if (Number(localVersion.replace(/\./g,"")) < Number(JSON.parse(res.body.toString()).version.replace(/\./g,"")) ) {
                                 log.warn("[ FCA-NAUGHTY ] •",getText(Language.NewVersionFound,global.Fca.Version,JSON.parse(res.body.toString()).version));
