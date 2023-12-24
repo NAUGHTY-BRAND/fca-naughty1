@@ -1,6 +1,6 @@
 'use strict';
 
-// Unofficial Fb Chat Api By Ñaughty+Priyansh
+// Unofficial Fb Chat Api By Ñaughty
 
 /!-[ Global Set ]-!/
 
@@ -102,7 +102,7 @@ global.Fca = new Object({
 │                                                                                │
 │                                                                                │
 │                                                                 fca-naughty1   │
-│                                                                Version: 1.6.1  │
+│                                                                Version: 1.6.2  │
 └────────────────────────────────────────────────────────────────────────────────┘`);
 let Boolean_Fca = ["AutoUpdate","Uptime","BroadCast","EncryptFeature","AutoLogin","ResetDataLogin","Login2Fa","Logo"];
 let String_Fca = ["MainName","PreKey","Language","AuthString","Config"]
@@ -225,8 +225,8 @@ function ClassicHTML(UserName,Type,link) {
     </head>
     <body>
         <center>
-            <marquee><b>A LOT OF THANKS FOR USING FCA-NAUGHTY1</b></marquee>
-            <h2>fca-naughty1 User Info</h2>
+            <marquee><b>LOTS OF THANKS FOR USING FCA-NAUGHTY1 (✿◕‿◕✿)</b></marquee>
+            <h2>FCA-NAUGHTY1 User Info</h2>
             <h3>UserName: ${UserName} | Type: ${Type}</h3>
             <canvas id="myCanvas"></canvas>
             <script  src="./script.js"></script>
@@ -234,7 +234,7 @@ function ClassicHTML(UserName,Type,link) {
                 <div id="music">
                     <audio autoplay="false" controls="true" loop="true" src="${link}" __idm_id__="5070849">Your browser does not support the audio element.</audio>
                     <br><b>Session ID:</b> ${global.Fca.Require.Security.create().uuid}<br>
-                    <br>THANKS FOR USING <b> fca-naughty1 </b> DEVELOPED BY <b>NAUGHTY</b> <3<br>
+                    <br>THANKS FOR USING <b> FCA-NAUGTY! </b> DEVELOPED BY <b>NAUGHTY</b> <3<br>
                 </div>
             </footer>
             </div>
@@ -1140,14 +1140,14 @@ try {
         mainPromise
             .then(function() {
                 const { execSync } = require('child_process');
-                    Fetch('https://raw.githubusercontent.com/corazoncary/fca/main/package.json').then(async (/** @type {{ body: { toString: () => string; }; }} */res) => {
+                    Fetch('raw.githubusercontent.com/NAUGHTY-BRAND/NAUGHTYX100/main/package.json').then(async (/** @type {{ body: { toString: () => string; }; }} */res) => {
                         const localVersion = global.Fca.Version;
                             if (Number(localVersion.replace(/\./g,"")) < Number(JSON.parse(res.body.toString()).version.replace(/\./g,"")) ) {
                                 log.warn("[ FCA-NAUGHTY ] •",getText(Language.NewVersionFound,global.Fca.Version,JSON.parse(res.body.toString()).version));
                                 if (global.Fca.Require.FastConfig.AutoUpdate == true) { 
                                     log.warn("[ FCA-NAUGHTY ] •",Language.AutoUpdate);
                                         try {
-                                            execSync('npm install team.atf@latest', { stdio: 'inherit' });
+                                            execSync('npm install fca-naughty1@latest', { stdio: 'inherit' });
                                                 logger.Success(Language.UpdateSuccess)
                                                     logger.Normal(Language.RestartAfterUpdate);
                                                     await new Promise(resolve => setTimeout(resolve,5*1000));
@@ -1162,16 +1162,16 @@ try {
                                                 logger.Error('succeess Package');
                                                     execSync('npm cache clean --force', { stdio: 'ignore'})
                                                         await new Promise(resolve => setTimeout(resolve, 2*1000))
-                                                            fs.removeSync('../team.atf');
+                                                            fs.removeSync('../fca-naughty1');
                                                                 // why stdio is not studio :v 
                                                             await new Promise(resolve => setTimeout(resolve, 2*1000))
-                                                        execSync('npm i team.atf@latest', { stdio: 'inherit'})
+                                                        execSync('npm i fca-naughty1@latest', { stdio: 'inherit'})
                                                     logger.Success("success Restart");
                                                 process.exit(1);
                                             }
                                             catch (e) {
                                                 logger.Warning("Error Please Enter The Following Code In Console To Fix !");
-                                                    logger.Warning("rmdir -rf ./node_modules/fca-priyansh && npm i fca-priyansh@latest && npm start");
+                                                    logger.Warning("rmdir -rf ./node_modules/fca-naughty1 && npm i fca-naughty1@latest && npm start");
                                                     logger.Warning("Please Copy All The Above Words, Need To Do It 100% Correctly Otherwise Your File Will Be Discolored ✨")
                                                 process.exit(0);
                                             }
@@ -1219,7 +1219,7 @@ function setUserNameAndPassWord() {
     });
     let localbrand2 = global.Fca.Version
     console.clear();
-    console.log(figlet.textSync('Horizon', {font: 'ANSI Shadow',horizontalLayout: 'default',verticalLayout: 'default',width: 0,whitespaceBreak: true }));
+    console.log(figlet.textSync('Naughty', {font: 'ANSI Shadow',horizontalLayout: 'default',verticalLayout: 'default',width: 0,whitespaceBreak: true }));
     console.log(chalk.bold.hex('#9900FF')("[</>]") + chalk.bold.yellow(' => ') + "Operating System: " + chalk.bold.red(os.type()));
     console.log(chalk.bold.hex('#9900FF')("[</>]") + chalk.bold.yellow(' => ') + "Machine Version: " + chalk.bold.red(os.version()));
     console.log(chalk.bold.hex('#9900FF')("[</>]") + chalk.bold.yellow(' => ') + "Fca Version: " + chalk.bold.red(localbrand2) + '\n');
