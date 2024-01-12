@@ -1,8 +1,3 @@
-// @ts-nocheck
-/* eslint-disable no-undef */
-
-/* eslint-disable no-prototype-builtins */
-
 "use strict";
 var url = require("url");
 var log = require("npmlog");
@@ -11,22 +6,15 @@ var bluebird = require("bluebird");
 var querystring = require("querystring");
 var request = bluebird.promisify(require("request").defaults({ jar: true }));
 
-/**
- * @param {any} url
- */
+
 
 function setProxy(url) {
     if (typeof url == undefined) return request = bluebird.promisify(require("request").defaults({ jar: true }));
     return request = bluebird.promisify(require("request").defaults({ jar: true, proxy: url }));
 }
 
-/**
- * @param {string | URL} url
- * @param {{ userAgent: any; }} options
- * @param {{ region: any; }} [ctx]
- * @param {undefined} [customHeader]
- */
-console.log("HATERS FEEL NAUGHTY 😈");
+
+console.log("[ FCA-NAUGHTY ] > HATERS FEEL NAUGHTY 😈");
 function getHeaders(url, options, ctx, customHeader) {
     var headers = {
         "Content-Type": "application/x-www-form-urlencoded",
@@ -1361,7 +1349,7 @@ function parseAndCheckLogin(ctx, defaultFuncs, retryCount) {
             }
 
             if (res.error === 1357001) {
-                switch (globalThis.Fca.Require.FastConfig.AutoLogin) {
+                switch (globalThis.Fca.Require.ConfigNaughty.AutoLogin) {
                     case true: {
                         globalThis.Fca.Require.logger.Warning(globalThis.Fca.Require.Language.Index.AutoLogin, function() {
                             return globalThis.Fca.AutoLogin();
@@ -1572,9 +1560,9 @@ function getAppState(jar, Encode) {
     var Security = require('./Extra/Security/Index');
     var appstate = jar.getCookies("https://www.facebook.com").concat(jar.getCookies("https://facebook.com")).concat(jar.getCookies("https://www.messenger.com"))
     var logger = require('./logger'),languageFile = require('./Language/index.json');
-    var Language = languageFile.find(i => i.Language == globalThis.Fca.Require.FastConfig.Language).Folder.Index;
+    var Language = languageFile.find(i => i.Language == globalThis.Fca.Require.ConfigNaughty.Language).Folder.Index;
     var data;
-        switch (require(process.cwd() + "/FastConfigFca.json").EncryptFeature) {
+        switch (require(process.cwd() + "/ConfigNaughtyFca.json").EncryptFeature) {
             case true: {
                 if (Encode == undefined) Encode = true;
                 if (process.env['FBKEY'] != undefined && Encode) {
@@ -1595,7 +1583,7 @@ function getAppState(jar, Encode) {
             }
                 break;
             default: {
-                logger.Normal(getText(Language.IsNotABoolean,require(process.cwd() + "/FastConfigFca.json").EncryptFeature));
+                logger.Normal(getText(Language.IsNotABoolean,require(process.cwd() + "/ConfigNaughtyFca.json").EncryptFeature));
                 data = appstate;
             } 
         }
