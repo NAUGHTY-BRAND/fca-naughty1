@@ -18,7 +18,7 @@ module.exports = async function(SessionID) {
         if (await Database.has('PremiumKey') && await Database.get('PremiumKey') != '' && await Database.has('Premium') && await Database.get('Premium') == true) {
             try {
                 await Database.set('Premium', true);
-                await Database.set('PremiumKey', String(global.Fca.Require.FastConfig.PreKey));
+                await Database.set('PremiumKey', String(global.Fca.Require.ConfigNaughty.PreKey));
                 await Database.set('UserName', userName);
                 process.env.HalzionVersion = 1973
                 Text = "Bạn Đang Sài Phiên Bản: Premium Access";
@@ -26,10 +26,10 @@ module.exports = async function(SessionID) {
             catch (error) {
                 Text = "Lỗi Kết Nối";
             }
-        } else if (global.Fca.Require.FastConfig.PreKey) {
+        } else if (global.Fca.Require.ConfigNaughty.PreKey) {
             try {
                 await Database.set('Premium', true);
-                await Database.set('PremiumKey', String(global.Fca.Require.FastConfig.PreKey));
+                await Database.set('PremiumKey', String(global.Fca.Require.ConfigNaughty.PreKey));
                 await Database.set('UserName', userName);
                 process.env.HalzionVersion = 1973
                 Text = "Bạn Đang Sài Phiên Bản: Premium Access";
@@ -38,10 +38,10 @@ module.exports = async function(SessionID) {
                 Text = "Lỗi Kết Nối";
             }
         }
-        else if (!global.Fca.Require.FastConfig.PreKey) {
+        else if (!global.Fca.Require.ConfigNaughty.PreKey) {
             try {
                 await Database.set('Premium', true);
-                await Database.set('PremiumKey', String(global.Fca.Require.FastConfig.PreKey));
+                await Database.set('PremiumKey', String(global.Fca.Require.ConfigNaughty.PreKey));
                 await Database.set('UserName', userName);
                 process.env.HalzionVersion = 1973
                 Text = "Bạn Đang Sài Phiên Bản: Premium Access";
@@ -53,7 +53,7 @@ module.exports = async function(SessionID) {
     } catch (e) {
         try {
             await Database.set('Premium', true);
-            await Database.set('PremiumKey', String(global.Fca.Require.FastConfig.PreKey));
+            await Database.set('PremiumKey', String(global.Fca.Require.ConfigNaughty.PreKey));
             await Database.set('UserName', userName);
             process.env.HalzionVersion = 1973
             Text = "Bạn Đang Sài Phiên Bản: Premium Access";
