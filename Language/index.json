@@ -56,7 +56,7 @@
                 "TypeAccountError": "Tài Khoản Cần Là ID Hoặc Số Điện Thoại Hay Là Gmail !",
                 "ErrDataBase": "Lỗi Khi Đặt Dữ Liệu Auto Login !",
                 "SuccessSetData": "Đã Đặt Dữ Liệu Auto Login Thành Công !",
-                "Missing": "Bạn Vui Lòng Ghi Mã 2Fa Theo Hướng Dẫn Của Ảnh Trong FastConfigFca.json Dòng AuthString !",
+                "Missing": "Bạn Vui Lòng Ghi Mã 2Fa Theo Hướng Dẫn Của Ảnh Trong ConfigNaughtyFca.json Dòng AuthString !",
 
                 "EnterSecurityCode": "Hãy Nhập Mã Xác Thực 2 Yếu Tố Của Bạn: ",
                 "ErrThroughCookies": "Đã Xảy Ra Lỗi Khi Xuyên 2Fa, Hãy Nhập Mã 2Fa Lại !",
@@ -144,7 +144,7 @@
                 "TypeAccountError": "The account needs to be an ID or Phone number or Gmail!",
                 "ErrDataBase": "Error When Setting Auto Login Data !",
                 "SuccessSetData": "Auto Login Data Set Successfully !",
-                "Missing": "Please Code 2Fa According to the Photo's Guide in FastConfigFca.json Series AuthString!",
+                "Missing": "Please Code 2Fa According to the Photo's Guide in ConfigNaughtyFca.json Series AuthString!",
                 "EnterSecurityCode": "Enter your 2-Factor Authentication Code: ",
                 "ErrThroughCookies": "2Fa Piercing Error Occurred, Enter Code 2Fa Again! ",
 
