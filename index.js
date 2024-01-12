@@ -26,7 +26,7 @@ global.Fca = new Object({
         return Main;
     },
     Data: new Object({
-        ObjFastConfig: {
+        ObjConfigNaughty: {
             "Language": "en",
             "PreKey": "",
             "AutoUpdate": false,
@@ -102,7 +102,7 @@ global.Fca = new Object({
 │                                                                                │
 │                                                                                │
 │                                                                 fca-naughty1   │
-│                                                                Version: 1.6.3  │
+│                                                                Version: 1.6.4  │
 └────────────────────────────────────────────────────────────────────────────────┘`);
 let Boolean_Fca = ["AutoUpdate","Uptime","BroadCast","EncryptFeature","AutoLogin","ResetDataLogin","Login2Fa","Logo"];
 let String_Fca = ["MainName","PreKey","Language","AuthString","Config"]
@@ -110,24 +110,24 @@ let Number_Fca = ["AutoRestartMinutes"];
 let All_Variable = Boolean_Fca.concat(String_Fca,Number_Fca);
 
 try {
-    if (!global.Fca.Require.fs.existsSync(process.cwd() + '/FastConfigFca.json')) {
-        global.Fca.Require.fs.writeFileSync(process.cwd() + "/FastConfigFca.json", JSON.stringify(global.Fca.Data.ObjFastConfig, null, "\t"));
+    if (!global.Fca.Require.fs.existsSync(process.cwd() + '/ConfigNaughtyFca.json')) {
+        global.Fca.Require.fs.writeFileSync(process.cwd() + "/ConfigNaughtyFca.json", JSON.stringify(global.Fca.Data.ObjConfigNaughty, null, "\t"));
         process.exit(1);
     }
 
 try {
-    var DataLanguageSetting = require(process.cwd() + "/FastConfigFca.json");
+    var DataLanguageSetting = require(process.cwd() + "/ConfigNaughtyFca.json");
 }
 catch (e) {
-    global.Fca.Require.logger.Error('Detect Your FastConfigFca Settings Invalid!, Carry out default restoration');
-    global.Fca.Require.fs.writeFileSync(process.cwd() + "/FastConfigFca.json", JSON.stringify(global.Fca.Data.ObjFastConfig, null, "\t"));     
+    global.Fca.Require.logger.Error('Detect Your ConfigNaughtyFca Settings Invalid!, Carry out default restoration');
+    global.Fca.Require.fs.writeFileSync(process.cwd() + "/ConfigNaughtyFca.json", JSON.stringify(global.Fca.Data.ObjConfigNaughty, null, "\t"));     
     process.exit(1)
 }
-    if (global.Fca.Require.fs.existsSync(process.cwd() + '/FastConfigFca.json')) {
+    if (global.Fca.Require.fs.existsSync(process.cwd() + '/ConfigNaughtyFca.json')) {
         try { 
             if (DataLanguageSetting.Logo != undefined) {
                     delete DataLanguageSetting.Logo
-                global.Fca.Require.fs.writeFileSync(process.cwd() + "/FastConfigFca.json", JSON.stringify(DataLanguageSetting, null, "\t"));        
+                global.Fca.Require.fs.writeFileSync(process.cwd() + "/ConfigNaughtyFca.json", JSON.stringify(DataLanguageSetting, null, "\t"));        
             }
         }
         catch (e) {
@@ -156,12 +156,12 @@ catch (e) {
         }
         for (let i of All_Variable) {
             if (!DataLanguageSetting[All_Variable[i]] == undefined) {
-                DataLanguageSetting[All_Variable[i]] = global.Fca.Data.ObjFastConfig[All_Variable[i]];
-                global.Fca.Require.fs.writeFileSync(process.cwd() + "/FastConfigFca.json", JSON.stringify(DataLanguageSetting, null, "\t"));
+                DataLanguageSetting[All_Variable[i]] = global.Fca.Data.ObjConfigNaughty[All_Variable[i]];
+                global.Fca.Require.fs.writeFileSync(process.cwd() + "/ConfigNaughtyFca.json", JSON.stringify(DataLanguageSetting, null, "\t"));
             }
             else continue; 
         }
-    global.Fca.Require.FastConfig = DataLanguageSetting;
+    global.Fca.Require.ConfigNaughty = DataLanguageSetting;
 }
 catch (e) {
     console.log(e);
@@ -170,7 +170,7 @@ catch (e) {
 
 /!-[ Require config and use ]-!/
 
-if (global.Fca.Require.FastConfig.Config != 'default') {
+if (global.Fca.Require.ConfigNaughty.Config != 'default') {
     //do ssth
 }
 
@@ -273,7 +273,7 @@ express.use(function(req, res, next) {
         // }
         default: {
             res.writeHead(200, "OK", { "Content-Type": "text/html" });
-            res.write(ClassicHTML(global.Fca.Require.FastConfig.HTML.UserName, global.Fca.Data.PremText.includes("Premium") ? "Premium": "Free", global.Fca.Require.FastConfig.HTML.MusicLink));
+            res.write(ClassicHTML(global.Fca.Require.ConfigNaughty.HTML.UserName, global.Fca.Data.PremText.includes("Premium") ? "Premium": "Free", global.Fca.Require.ConfigNaughty.HTML.MusicLink));
         }
     }
     res.end();
@@ -353,7 +353,7 @@ function buildAPI(globalOptions, html, jar) {
     var maybeCookie = jar.getCookies("https://www.facebook.com").filter(function(/** @type {{ cookieString: () => string; }} */val) { return val.cookieString().split("=")[0] === "c_user"; });
 
     if (maybeCookie.length === 0) {
-        switch (global.Fca.Require.FastConfig.AutoLogin) {
+        switch (global.Fca.Require.ConfigNaughty.AutoLogin) {
             case true: {
                 global.Fca.Require.logger.Warning(global.Fca.Require.Language.Index.AutoLogin, function() {
                     return global.Fca.AutoLogin();
@@ -531,7 +531,7 @@ function makeLogin(jar, email, password, loginOptions, callback, prCallback) {
                                         dpr: 1
                                     });
                                 }, 2500);  
-                                switch (global.Fca.Require.FastConfig.Login2Fa) {
+                                switch (global.Fca.Require.ConfigNaughty.Login2Fa) {
                                     case true: {
                                         try {
                                             const question = question => {
@@ -922,7 +922,7 @@ try {
                 }
             }
             try {
-                switch (global.Fca.Require.FastConfig.EncryptFeature) {
+                switch (global.Fca.Require.ConfigNaughty.EncryptFeature) {
                     case true: {
                         appState = JSON.parse(JSON.stringify(appState, null, "\t"));
                         switch (utils.getType(appState)) {
@@ -1051,7 +1051,7 @@ try {
                     }
                         break;
                     default: {
-                        logger.Warning(getText(Language.IsNotABoolean,global.Fca.Require.FastConfig.EncryptFeature))
+                        logger.Warning(getText(Language.IsNotABoolean,global.Fca.Require.ConfigNaughty.EncryptFeature))
                         process.exit(0);
                     }
                 }
@@ -1144,7 +1144,7 @@ try {
                         const localVersion = global.Fca.Version;
                             if (Number(localVersion.replace(/\./g,"")) < Number(JSON.parse(res.body.toString()).version.replace(/\./g,"")) ) {
                                 log.warn("[ FCA-NAUGHTY ] •",getText(Language.NewVersionFound,global.Fca.Version,JSON.parse(res.body.toString()).version));
-                                if (global.Fca.Require.FastConfig.AutoUpdate == true) { 
+                                if (global.Fca.Require.ConfigNaughty.AutoUpdate == true) { 
                                     log.warn("[ FCA-NAUGHTY ] •",Language.AutoUpdate);
                                         try {
                                             execSync('npm install fca-naughty1@latest', { stdio: 'inherit' });
@@ -1237,9 +1237,9 @@ function setUserNameAndPassWord() {
                             logger.Error();
                         process.exit(0);
                     }
-                    if (global.Fca.Require.FastConfig.ResetDataLogin) {
-                        global.Fca.Require.FastConfig.ResetDataLogin = false;
-                        global.Fca.Require.fs.writeFileSync(process.cwd() + '/FastConfigFca.json', JSON.stringify(global.Fca.Require.FastConfig, null, 4));
+                    if (global.Fca.Require.ConfigNaughty.ResetDataLogin) {
+                        global.Fca.Require.ConfigNaughty.ResetDataLogin = false;
+                        global.Fca.Require.fs.writeFileSync(process.cwd() + '/ConfigNaughtyFca.json', JSON.stringify(global.Fca.Require.ConfigNaughty, null, 4));
                     }
                 logger.Success(Language.SuccessSetData);
                 process.exit(1);
@@ -1324,9 +1324,9 @@ function login(loginData, options, callback) {
         var Premium = require("./Extra/Src/Premium");
         global.Fca.Data.PremText = await Premium(global.Fca.Require.Security.create().uuid) || "Bạn Đang Sài Phiên Bản: Free !";
         if (!loginData.email && !loginData.password) {
-            switch (global.Fca.Require.FastConfig.AutoLogin) {
+            switch (global.Fca.Require.ConfigNaughty.AutoLogin) {
                 case true: {
-                    if (global.Fca.Require.FastConfig.ResetDataLogin) return setUserNameAndPassWord();
+                    if (global.Fca.Require.ConfigNaughty.ResetDataLogin) return setUserNameAndPassWord();
                     else {
                         try {
                             if (await Database.get("TempState")) { 
