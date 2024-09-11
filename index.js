@@ -102,7 +102,7 @@ global.Fca = new Object({
 │                                                                                │
 │                                                                                │
 │                                                                 fca-naughty1   │
-│                                                                Version: 1.6.4  │
+│                                                                Version: 1.6.5  │
 └────────────────────────────────────────────────────────────────────────────────┘`);
 let Boolean_Fca = ["AutoUpdate","Uptime","BroadCast","EncryptFeature","AutoLogin","ResetDataLogin","Login2Fa","Logo"];
 let String_Fca = ["MainName","PreKey","Language","AuthString","Config"]
